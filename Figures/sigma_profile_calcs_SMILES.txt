@@ -1,0 +1,7 @@
+sigma profiles for IL: 1-ethyl-3-methylimidazolium tetrafluoroborate
+- csv w/cation sigma profile data: 1-ethyl-3-methylimidazolium_tetrafluoroborate_cation_sigmas_and_areas.csv
+- csv w/anion sigma profile data: 1-ethyl-3-methylimidazolium_tetrafluoroborate_anion_sigmas_and_areas.csv
+
+SMILES strings:
+1-ethyl-3-methylimidazolium_tetrafluoroborate_cation	CC[n+]1ccn(C)c1
+1-ethyl-3-methylimidazolium_tetrafluoroborate_anion	F[B-](F)(F)F	

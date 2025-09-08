@@ -1,0 +1,5 @@
+input_features,Linear L1,XGBoost
+RDKit,0.643082,0.377276
+sigma profiles,0.789636,0.394882
+"M$_i$, WAPS & WANS",0.7661100000000001,0.435888
+S$_i$,0.752778,0.395592

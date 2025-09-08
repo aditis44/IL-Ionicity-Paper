@@ -639,10 +639,10 @@ def logOverallResults(wandb_run, metrics_list, metrics_by_cation_family_list, me
 def train_model_log_y_cv(train_and_val_sets_dict, model_pipeline, model_configs, model_basename):
 	if(molar_conductivity_or_ionicity == 'ionicity'): #predicting ionicity
 		#Start a W&B run
-		run = wandb.init(project='IonicLiquidsIonicity', entity='aseshad4', config = model_configs)
+		run = wandb.init(project='IonicityProjectNameHERE', entity='name', config = model_configs)
 	else: #predicting conductivity
 		#Start a W&B run
-		run = wandb.init(project='IonicLiquidsMolarConductivity', entity='aseshad4', config = model_configs)
+		run = wandb.init(project='ConductivityProjectNameHERE', entity='name', config = model_configs)
 	
 	#Pull out data
 	x_data_train_and_val = train_and_val_sets_dict['x_train_and_val']
@@ -757,10 +757,10 @@ def train_model_log_y_cv(train_and_val_sets_dict, model_pipeline, model_configs,
 def train_model_no_log_y_cv(train_and_val_sets_dict, model_pipeline, model_configs, model_basename):
 	if(molar_conductivity_or_ionicity == 'ionicity'): #predicting ionicity
 		#Start a W&B run
-		run = wandb.init(project='IonicLiquidsIonicity', entity='aseshad4', config = model_configs)
+		run = wandb.init(project='IonicityProjectNameHERE', entity='name', config = model_configs)
 	else: #predicting conductivity
 		#Start a W&B run
-		run = wandb.init(project='IonicLiquidsMolarConductivity', entity='aseshad4', config = model_configs)
+		run = wandb.init(project='ConductivityProjectNameHERE', entity='name', config = model_configs)
 	
 	#Pull out data
 	x_data_train_and_val = train_and_val_sets_dict['x_train_and_val']
@@ -881,10 +881,10 @@ def train_model_no_log_y_cv(train_and_val_sets_dict, model_pipeline, model_confi
 def train_model_on_trainAndVal_no_log_y(train_val_test_sets_dict, model_pipeline, model_configs, model_basename):
 	if(molar_conductivity_or_ionicity == 'ionicity'): #predicting ionicity
 		#Start a W&B run
-		run = wandb.init(project='IonicLiquidsIonicity', entity='aseshad4', config = model_configs)
+		run = wandb.init(project='IonicityProjectNameHERE', entity='name', config = model_configs)
 	else: #predicting conductivity
 		#Start a W&B run
-		run = wandb.init(project='IonicLiquidsMolarConductivity', entity='aseshad4', config = model_configs)
+		run = wandb.init(project='ConductivityProjectNameHERE', entity='name', config = model_configs)
 		
 	#Combine training and validation sets
 	train_val_sets_dict = combine_train_and_val_sets(train_val_test_sets_dict, return_df = True)
@@ -979,10 +979,10 @@ def train_model_on_trainAndVal_no_log_y(train_val_test_sets_dict, model_pipeline
 def train_model_on_trainAndVal_log_y(train_val_test_sets_dict, model_pipeline, model_configs, model_basename):
 	if(molar_conductivity_or_ionicity == 'ionicity'): #predicting ionicity
 		#Start a W&B run
-		run = wandb.init(project='IonicLiquidsIonicity', entity='aseshad4', config = model_configs)
+		run = wandb.init(project='IonicityProjectNameHERE', entity='name', config = model_configs)
 	else: #predicting conductivity
 		#Start a W&B run
-		run = wandb.init(project='IonicLiquidsMolarConductivity', entity='aseshad4', config = model_configs)
+		run = wandb.init(project='ConductivityProjectNameHERE', entity='name', config = model_configs)
 	
 	#Combine training and validation sets
 	train_val_sets_dict = combine_train_and_val_sets(train_val_test_sets_dict, return_df = True)

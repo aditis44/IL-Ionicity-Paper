@@ -21,6 +21,7 @@ Files/Folders:
         - x: corresponds to x data/features that are used as input to the model (ex: RDKit descriptors, sigma profile-based descriptors)
         - y: corresponds to the y data/labels that are used when training & evaluating the model (i.e. molar ionic conductivity or ionicity)
         - dataset_info: corresponds to any additional information for the ILs that is not in the x or y csv files
+- Figures folder: code/files needed to create figures in paper main text
 
 Python package versions:
 - numpy              1.26.4

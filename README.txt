@@ -12,9 +12,11 @@ Files/Folders:
     - createPlotsML.py - code used to create parity plots, calculate model performance for each model/set of results
     - ionic_liquid_SMILES_functions.py - code used to manipulate/obtain information from ionic liquid SMILES strings or cation/anion SMILES strings
     - train_models.py - code used to train models to predict ionicity or molar conductivity, and tune hyperparameters
+    - load_eval_models.py - example code for loading the saved model files (.pkl) & evaluating them/calculating model performance on the training & test sets
     - feature_importance_analysis.py - code used for feature importance analysis
     - ref_train_models_cv.sh - example job submission script for 5-fold cross-validation using S_i input descriptors
     - ref_train_eval_optimal_models.sh - example job submission script for training models w/optimal hyperparameters & obtaining feature importance rankings using S_i input descriptors
+    - ref_load_eval_optimal_models.sh - example job submission script for loading a saved model & evaluating it (estimating model performance metrics)
 - sigma_profile_calculations folder: code & reference job submission scripts used for calculating sigma profiles using openCOSMO-RS & ORCA
 - ILThermo_Preprocessed_Data: csv files with preprocessed dataset used for training models & dataset analysis (includes for each IL the compound name, SMILES strings, T,P, viscosity, density, ionic conductivity, estimated ionic radii and ionicity along with different input descriptors - RDKit, sigma profiles, etc.)
     - in ILThermo_Preprocessed_Data/ILThermo_Preprocessed_Data_Splits folder, there are 3 main types of csv files  
@@ -22,6 +24,7 @@ Files/Folders:
         - y: corresponds to the y data/labels that are used when training & evaluating the model (i.e. molar ionic conductivity or ionicity)
         - dataset_info: corresponds to any additional information for the ILs that is not in the x or y csv files
 - Figures folder: code/files needed to create figures in paper main text
+- saved_models folder: saved model files (.pkl) for optimal linear (L1 regularization) models using S_i, RDKit, or M_i, WAPS & WANS input descriptors
 
 Python package versions:
 - numpy              1.26.4

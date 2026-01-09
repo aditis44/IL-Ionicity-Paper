@@ -1,4 +1,4 @@
-#Code used to train models to predict ionicity or molar conductivity, and tune hyperparameters
+#Code used to train models to predict ionicity or molar conductivity (saves final fitted models (not during cross validation) using pickle), and tune hyperparameters
 #Uses preprocessed dataset created using data from NIST ILThermo database (https://ilthermo.boulder.nist.gov, Kazakov et al., Dong et al. (2007)) & ILThermoPy package (https://github.com/IvanChernyshov/ILThermoPy)
 
 #Uses cross validation, trains specified model to predict conductivity or ionicity, loops over multiple hyperparameter values
@@ -41,6 +41,7 @@ import pandas as pd
 import os
 import copy
 import argparse
+import pickle
 
 import createPlotsML
 from createPlotsML import *
@@ -962,6 +963,12 @@ def train_model_on_trainAndVal_no_log_y(train_val_test_sets_dict, model_pipeline
 	#Stop W&B run
 	run.finish()
 
+	#save model using pickle
+	#https://scikit-learn.org/stable/model_persistence.html
+	saved_model_path = directory_to_save_results + '/' + model_basename + '_' + molar_conductivity_or_ionicity + '_' + ionic_radii_estimation_method_str + input_features_to_use + '_model.pkl'
+	with open(saved_model_path, 'wb') as file:
+		pickle.dump(model_pipeline,file, protocol = 5)
+
 	#run feature importance analysis if linear model
 	if(model_type == 'linear_l1'):
 		feature_importance_analysis_trainAndValCombined(model_pipeline, train_test_sets_dict, model_basename, input_features_to_use, directory_to_save_results, molar_conductivity_or_ionicity, ionic_radii_estimation_method_str)
@@ -1059,6 +1066,12 @@ def train_model_on_trainAndVal_log_y(train_val_test_sets_dict, model_pipeline, m
 	
 	#Stop W&B run
 	run.finish()
+
+	#save model using pickle
+	#https://scikit-learn.org/stable/model_persistence.html
+	saved_model_path = directory_to_save_results + '/' + model_basename + '_' + molar_conductivity_or_ionicity + '_' + ionic_radii_estimation_method_str + input_features_to_use + '_model.pkl'
+	with open(saved_model_path, 'wb') as file:
+		pickle.dump(model_pipeline,file, protocol = 5)
 
 	#run feature importance analysis if linear model
 	if(model_type == 'linear_l1'):
